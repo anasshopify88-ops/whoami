@@ -78,7 +78,28 @@
     .avatar img{ width:92%; height:92%; border-radius:50%; object-fit:contain; background:#fff }
 
     h1{ margin:6px 0 4px; font-size:clamp(26px, 4vw, 40px); font-weight:900 }
-    .subtitle{ margin:0; color:var(--muted); font-size:clamp(14px, 2.4vw, 16px) }
+
+    /* العنوان الفرعي كسطرين: الاسم فوق، الدولة تحت */
+    .subtitle{
+      margin:0;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:2px;
+    }
+    .subtitle .name{
+      color:var(--text);
+      font-weight:900;
+      font-size:clamp(20px, 3.6vw, 24px);
+      line-height:1.2;
+    }
+    .subtitle .country{
+      color:var(--muted);
+      font-weight:700;
+      font-size:clamp(14px, 2.4vw, 16px);
+      line-height:1.2;
+    }
 
     /* Badges */
     .badges{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px }
@@ -122,11 +143,24 @@
     .hl p{ margin:0; color:#475569; font-size:14px }
 
     .feature{ display:flex; gap:12px; align-items:flex-start }
+
+    /* أيقونات دائرية 100% */
     .icon{
-      width:38px; height:38px; border-radius:12px; display:grid; place-items:center;
-      background:linear-gradient(135deg, #f0f9ff, #e6f4ff); border:1px solid var(--card-border)
+      width:48px;
+      height:48px;
+      border-radius:50%;           /* دائرة كاملة */
+      display:grid;
+      place-items:center;
+      background:#fff;             /* تقدر ترجّع التدرّج لو تحب */
+      border:1px solid var(--card-border);
+      box-shadow:0 6px 14px rgba(2,6,23,.08);
+      flex:0 0 48px;
     }
-    .icon svg{ width:20px; height:20px; stroke:#0284c7 }
+    .icon svg{
+      width:24px;
+      height:24px;
+      stroke:#0284c7;
+    }
 
     /* ===== Timeline (year-line + pulsing dot aligned with year) ===== */
     .timeline{
@@ -183,7 +217,10 @@
           </div>
 
           <h1>من أنا؟</h1>
-          <p class="subtitle">أنس راشد - المملكة العربية السعودية.</p>
+          <p class="subtitle">
+            <span class="name">أنس راشد</span>
+            <span class="country">المملكة العربية السعودية</span>
+          </p>
 
           <!-- شارات -->
           <div class="badges" aria-label="مجالات العمل">
@@ -231,10 +268,9 @@
             <a class="social-link" href="https://www.instagram.com/anas_rashed88" target="_blank" rel="noopener" aria-label="Instagram">
               <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram">
             </a>
-  <a class="social-link" href="https://anasrashed.gumroad.com/" target="_blank" rel="noopener" aria-label="Gumroad">
-  <img src="https://cdn.simpleicons.org/gumroad/FF90E8" alt="Gumroad">
-</a>
-
+            <a class="social-link" href="https://anasrashed.gumroad.com/" target="_blank" rel="noopener" aria-label="Gumroad">
+              <img src="https://cdn.simpleicons.org/gumroad/FF90E8" alt="Gumroad">
+            </a>
             <a class="social-link" href="https://x.com/anasrashed88" target="_blank" rel="noopener" aria-label="X">
               <img src="https://cdn.simpleicons.org/x/000000" alt="X">
             </a>
@@ -257,7 +293,7 @@
             <p style="margin-bottom:0">وفي السنوات الأخيرة، دخلت مجالاً أحبه كثيرًا: صناعة الرسوم المتحركة للأطفال. بدأت بتأليف قصص تربوية وتعليمية، ثم حولتها إلى محتوى بصري عبر قناة <a href="https://www.youtube.com/@AjyalAlarab" target="_blank" rel="noopener">أجيال العرب</a> على اليوتيوب، بهدف تقديم محتوى عربي ممتع وهادف للأطفال. كل ما أقدمه هنا من واقع تجربة حقيقية، وبأسلوب عملي بعيد عن التنظير. أردت أن أشارك فيه ما تعلمته عبر التجربة والخطأ، لتختصر على نفسك الكثير من الوقت والجهد، وتنطلق نحو نتائج ملموسة بإذن الله.</p>
           </div>
 
-          <!-- بطاقات مختصرة (أضفنا بطاقة رابعة: صناعة الرسوم المتحركة) -->
+          <!-- بطاقات مختصرة (4 بطاقات) -->
           <div class="grid" aria-label="محطات وخبرات">
             <article class="hl feature">
               <div class="icon">
@@ -325,7 +361,7 @@
                 <span class="dot" aria-hidden="true"></span>
                 <strong>2015</strong>
               </div>
-              <small class="desc">— بداية المضاربة في أسواق الأسهم العالمية</small>
+              <small class="desc">— التحليل الفني للأسواق المالية</small>
             </div>
 
             <div class="step">
@@ -333,7 +369,7 @@
                 <span class="dot" aria-hidden="true"></span>
                 <strong>2021</strong>
               </div>
-              <small class="desc">— تصميم وتحسين محركات البحث للمتاجر الإلكترونيه.</small>
+              <small class="desc">— تصميم المتاجر الإلكترونية وتحسين محركات البحث</small>
             </div>
 
             <div class="step" style="margin-bottom:0">
