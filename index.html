@@ -30,6 +30,9 @@
       --accent:#0ea5e9; --accent-2:#22d3ee; --accent-3:#60a5fa;
       --radius:24px; --radius-md:16px;
       --shadow:0 14px 40px rgba(15,23,42,.10);
+
+      /* لأزرار الهيدر */
+      --btn:#111827; --btn-hover:#0b1220;
     }
 
     /* Reset + منع تمدد أفقي */
@@ -49,8 +52,8 @@
     .shell{min-height:100dvh; padding:34px 16px; display:grid; place-items:center}
     .wrap{width:100%; max-width:1120px}
 
-    /* شريط رجوع */
-    .topbar{display:flex;justify-content:flex-start;margin-bottom:18px}
+    /* شريط رجوع + الرئيسية */
+    .topbar{display:flex;justify-content:flex-start;align-items:center;gap:10px;margin-bottom:18px}
     .back-btn{
       display:inline-flex;align-items:center;gap:8px;
       padding:10px 14px;border-radius:999px;background:#fff;border:1px solid var(--card-border);
@@ -58,18 +61,20 @@
       box-shadow:0 3px 12px rgba(2,6,23,.06); transition:transform .05s, background .2s
     }
     .back-btn:active{transform:translateY(1px)}
+    .home-btn{
+      background:var(--btn); color:#fff; border-color:var(--btn);
+      box-shadow:0 2px 8px rgba(17,24,39,.15);
+    }
+    .home-btn:hover{ background:var(--btn-hover) }
 
     /* ===== HERO ===== */
     .hero{
       position:relative; overflow:hidden;
-      background:#fff;                 /* ← أبيض صافي */
+      background:#fff;                 /* أبيض صافي */
       border:1px solid var(--card-border);
       border-radius:var(--radius); box-shadow:var(--shadow);
       padding:28px;
     }
-    /* أزلنا الهالات الملونة:
-    .hero::before,.hero::after{ ... }
-    */
 
     .hero-grid{
       position:relative; z-index:1;
@@ -151,6 +156,7 @@
     <div class="wrap">
       <div class="topbar">
         <a class="back-btn" href="javascript:history.back()" aria-label="رجوع">← رجوع</a>
+        <a class="back-btn home-btn" href="https://anasrashed.com" aria-label="الذهاب إلى الصفحة الرئيسية">الرئيسية</a>
       </div>
 
       <!-- ===== HERO ===== -->
